@@ -5,6 +5,3 @@
 
 #   Install python requirements via `pip`.
     ../venv/bin/pip3 install -r ../requirements.txt
-
-#   Create `../out/` directory for simulation data.
-    mkdir -p ../out/
