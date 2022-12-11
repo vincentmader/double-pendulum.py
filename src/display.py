@@ -46,13 +46,7 @@ def draw_frame(display, color):
         )
 
 
-def draw_tail(
-    ys,
-    frame_num,
-    L,
-    display,
-    fading_tails=True,
-):
+def draw_tail(ys, frame_num, L, display, fading_tails=True):
     frames_back = min(frame_num - 1, cfg.TAIL_LENGTH)
     for idx in range(frame_num - frames_back, frame_num):
         y_previous = ys[idx - 1]
