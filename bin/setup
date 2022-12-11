@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#   Create a virtual environment for python, if it does not exist already.
+    [ -d ../venv/ ] || python3 -m virtualenv ../venv/
+
+#   Install python requirements via `pip`.
+    ../venv/bin/pip3 install -r ../requirements.txt
+
+#   Create `../out/` directory for simulation data.
+    mkdir -p ../out/
