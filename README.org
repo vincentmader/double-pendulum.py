@@ -7,6 +7,7 @@ via the `pygame` library.
 
 A demonstration can also be seen [[https://youtu.be/H_trgmAk5kY][here]] on YouTube.
 
+*** Setup
 To try it out, you need to have `python3` installed on your machine. 
 
 If you also have the `make` CLI tool, you can run the 
