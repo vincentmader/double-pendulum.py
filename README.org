@@ -14,7 +14,7 @@ project by executing the following two commands:
 From your shell, run
 #+begin_src
 make setup
-make run
+make pendulum
 #+end_src
 
 If you don't, you can also navigate to the `./bin/` 
