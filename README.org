@@ -3,7 +3,9 @@
 In this small python project, the equations of motion 
 of a double pendulum were integrated using a fourth 
 order Runge-Kutta scheme. The results were visualized 
-via the `pygame` library.
+via the `pygame` library.                                                                    
+
+A demonstration can also be seen [[https://youtu.be/H_trgmAk5kY][here]] on YouTube.
 
 To try it out, you need to have `python3` installed on your machine. 
 
