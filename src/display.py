@@ -138,11 +138,11 @@ def main(ys, L, fading_tails=True):
         pygame.draw.circle(display, WHITE, cfg.ORIGIN, 10)
         pygame.draw.circle(display, WHITE, (x_1, y_1), 10)
         pygame.draw.circle(display, WHITE, (x_2, y_2), 10)
-        pygame.draw.line(display, WHITE, cfg.ORIGIN, (x_1, y_1), 3)
-        pygame.draw.line(display, WHITE, (x_1, y_1), (x_2, y_2), 3)
+        pygame.draw.line(display, WHITE, cfg.ORIGIN, (x_1, y_1), cfg.LINE_WIDTH)
+        pygame.draw.line(display, WHITE, (x_1, y_1), (x_2, y_2), cfg.LINE_WIDTH)
 
         # Show frame number in top left.
-        if not cfg.CHRISTMAS_MODE:
+        if cfg.SHOW_FRAME_NR and not cfg.CHRISTMAS_MODE:
             formatted_frame_num = format_frame_number(
                 frame_num, len(str(len(ys)))
             )

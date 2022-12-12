@@ -8,35 +8,37 @@ from integrate import main as integrate
 from display import main as display
 
 
-def initial_conditions():
+def get_initial_state():
     if cfg.CHRISTMAS_MODE:
         return [PI * .75, PI * .75, 0, 0]
-    else:
+    elif cfg.INITIAL_CONDITIONS != "random":
         return [PI, .8 * PI, 0, 0]
+    else:
+        return [PI, np.random.rand(1, 1) * PI, 0, 0]
 
 
 def main(
-    run_integrator=True,
+    run_integrator=cfg.RUN_INTEGRATOR
 ):
-    # Define path to savefile.
-    filename = "states.txt"
-    savepath = os.path.join(cfg.PATH_TO_OUT, filename)
-
     # Set parameters of physical system.
     L, m = 1, 1
 
     # Define initial conditions.
-    y0 = initial_conditions()
+    initial_state = get_initial_state()
 
     # Run integrator, or load from file.
     if run_integrator:
-        ys = integrate(y0, m, L)
-        np.savetxt(savepath, ys)
+        states = integrate(initial_state, m, L)
+        np.savetxt(cfg.PATH_TO_SAVEFILE, states)
     else:
-        ys = np.loadtxt(savepath)
+        if os.path.exists(cfg.PATH_TO_SAVEFILE):
+            states = np.loadtxt(cfg.PATH_TO_SAVEFILE)
+        else:
+            print("\nNo save-file found, exiting...")
+            return
 
     # Display simulation using pygame.
-    display(ys, L, fading_tails=True,)
+    display(states, L, fading_tails=True,)
 
 
 if __name__ == "__main__":
