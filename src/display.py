@@ -1,5 +1,7 @@
+from os import environ
 import sys
 import time
+environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 
 from numpy import cos, sin
 import pygame
@@ -79,6 +81,7 @@ def draw_tail(ys, frame_num, L, display, fading_tails=True):
 
 
 def main(ys, L, fading_tails=True):
+    print("Displaying...\n")
     pygame.init()
 
     # Define display.

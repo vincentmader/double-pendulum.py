@@ -1,4 +1,5 @@
 import os
+import random
 
 import numpy as np
 from numpy import pi as PI
@@ -10,11 +11,13 @@ from display import main as display
 
 def get_initial_state():
     if cfg.CHRISTMAS_MODE:
-        return [PI * .75, PI * .75, 0, 0]
+        initial_state = [.75*PI, .75*PI, 0, 0]
     elif cfg.INITIAL_CONDITIONS != "random":
-        return [PI, .8 * PI, 0, 0]
+        initial_state = [PI, .8*PI, 0, 0]
     else:
-        return [PI, np.random.rand(1, 1) * PI, 0, 0]
+        rand = random.uniform(0, 1)
+        initial_state = [PI, rand*PI, 0, 0]
+    return np.array(initial_state)
 
 
 def main(
