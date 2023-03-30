@@ -33,7 +33,7 @@ LINE_WIDTH = 2
 GRAVITATIONAL_ACCELERATION = 0.5
 
 # Specify whether frame nr. should be shown in upper left corner.
-SHOW_FRAME_NR = True
+SHOW_FRAME_NR = False
 
 # Specify initial conditions.
 # - either "random"
